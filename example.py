@@ -21,6 +21,10 @@ plt.plot(c)
 
 
 
+data = []
+with open('report_R9.txt','r',encoding='utf-8') as f:
+  for line in f:
+    data.append(line)
 
 
 ser = serial.Serial('com6',115200)
@@ -30,6 +34,9 @@ ser = serial.Serial('com6',115200)
 data = pd.read_csv(r'/home/lihuiliu/mnt/workspace/battery_log/report1.txt',\
   names=['origin_v','origin_i','v','i_low','i_high'],header=None,\
   dtype = str)
+
+data = np.fromfile('report_R9.txt',dtype=np.int32,count=-1,sep='')
+
 
 data_na = data.dropna(how='any').reset_index(drop=True)
 
