@@ -1,7 +1,7 @@
-import numpy as np
+ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-#%matplotlib auto
+%matplotlib auto
 #%matplotlib inline
 from matplotlib.animation import FuncAnimation
 from pandas.core.indexes import interval
